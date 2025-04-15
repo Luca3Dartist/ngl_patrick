@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+      import {
+        getAnalytics,
+        logEvent,
+      } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyCmL3X8pQOHhtXMIFTxJsO7KHQ2nDr_G6w",
+        authDomain: "ask-fun-d10f0.firebaseapp.com",
+        projectId: "ask-fun-d10f0",
+        storageBucket: "ask-fun-d10f0.appspot.com",
+        messagingSenderId: "214597529567",
+        appId: "1:214597529567:web:d49e8aeef77b9e0a039e6a",
+        measurementId: "G-5DV1ZR5ZHG",
+      };
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+    <title>NGL - Sent!</title>
+    <link rel="stylesheet" href="stylesheets/normalize.css" />
+    <link rel="stylesheet" href="stylesheets/style.css%3Fv=34.css" />
+    <link rel="shortcut icon" href="images/ngl.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="scripts/mixpanel-jslib-snippet.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width"
+    />
+    <meta name="user:language" />
+    <meta property="og:image" />
+    <meta property="og:title" />
+    <meta property="og:description" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" />
+    <meta
+      name="twitter:title"
+      content="@undefined: Send me anonymous messages!"
+    />
+    <meta name="twitter:description" content="NGL: Anonymous Q&amp;A" />
+    <script></script>
+  </head>
+  <body>
+    <script>
+      var translations = {
+        sent: "Sent!",
+        sendAnotherMessage: "Send another message",
+        peopleJustTappedTheButton: "people just tapped the button",
+        downloadButton: "Get your own messages!",
+        oneTimePayment: "one time payment of",
+        likelyToReply: "You’re 3x more likely to get a reply.",
+        pinned: "Pinned to the top of their inbox!",
+        boosted: "Boosted! 🚀",
+        boostMessage: "Boost message!",
+        boostYourMessage: "Boost your message! 🚀",
+        standOut: "Stand out with a Boosted Message",
+      };
+      var uid = "IrVd40mB9wUtW9pwAgqUVv7egbB3";
+    </script>
+    <style>
+      html {
+        background: linear-gradient(to bottom right, #ec1187 0%, #ff8d10 100%);
+        background-attachment: fixed;
+      }
+    </style>
+    <div class="container">
+      <div class="navbar">
+        <a class="another1" href="javascript:history.back()"
+          ><img src="images/left.png" width="24" height="24"
+        /></a>
+      </div>
+      <div class="space1"></div>
+      <img class="check" src="images/sent.png" />
+      <div class="space2"></div>
+      <h1 class="sent">Sent!</h1>
+      <div class="space4"></div>
+      <h2 class="download-prompt">
+        👇 <span class="clickCount">205</span> people just tapped the button 👇
+      </h2>
+      <div class="space2"></div>
+      <a
+        class="button download-link download-link2 pulse"
+        href="https://apps.apple.com/us/app/ngl-anonymous-q-a/id1596550932?ppid=543cb167-5bdc-448f-a202-e5506f5d2837"
+        target="_blank"
+        >Get your own messages!</a
+      >
+      <div class="space2"></div>
+      <a class="another another1" href="javascript:history.back()"
+        >Send another message</a
+      >
+    </div>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

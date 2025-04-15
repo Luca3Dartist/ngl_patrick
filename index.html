@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+      import {
+        getAnalytics,
+        logEvent,
+      } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyCmL3X8pQOHhtXMIFTxJsO7KHQ2nDr_G6w",
+        authDomain: "ask-fun-d10f0.firebaseapp.com",
+        projectId: "ask-fun-d10f0",
+        storageBucket: "ask-fun-d10f0.appspot.com",
+        messagingSenderId: "214597529567",
+        appId: "1:214597529567:web:d49e8aeef77b9e0a039e6a",
+        measurementId: "G-5DV1ZR5ZHG",
+      };
+    </script>
+    <title>@luc4.aq</title>
+    <link rel="stylesheet" href="stylesheets/normalize.css" />
+    <link rel="stylesheet" href="stylesheets/style.css%3Fv=34.css" />
+    <link rel="shortcut icon" href="images/ngl.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="scripts/mixpanel-jslib-snippet.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width"
+    />
+    <meta name="user:language" content="en" />
+    <meta property="og:image" content="https://ngl.link/images/ngl-big.png" />
+    <meta property="og:title" content="Anonymous messages!" />
+    <meta property="og:description" content="Anonymous messages!" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://ngl.link/images/ngl-big.png" />
+    <meta
+      name="twitter:title"
+      content="@luc4.aq: Send me anonymous messages!"
+    />
+    <meta name="twitter:description" content="NGL: Anonymous Q&amp;A" />
+    <script>
+      var translations = {
+        peopleJustTappedTheButton: "people just tapped the button",
+        sendButton: "Send!",
+        anonymousQA: "anonymous q&a",
+        inputPlaceHolder: "send me anonymous messages...",
+        downloadButton: "Get your own messages!",
+      };
+      var priorityInboxEnabled = false;
+      var username = "luc4.aq";
+      var uid = "IrVd40mB9wUtW9pwAgqUVv7egbB3";
+      var gameSlug = "";
+      var gameId = "default";
+      var ig_username = "luc4.aq";
+      var ig_pfp_url =
+        "https://firebasestorage.googleapis.com:443/v0/b/ask-fun-d10f0.appspot.com/o/images%2F2BDB8FF5-87EB-478E-A52F-F5962D0582A9.jpg?alt=media&token=22229062-7020-4f65-a3bd-85ba10377eef";
+    </script>
+    <input type="hidden" id="userRegion" value="US" />
+  </head>
+  <body>
+    <div class="container" style="z-index: 1000; position: relative">
+      <form class="form" action="submit.php" method="post">
+        <div class="bubble">
+          <div class="header">
+            <div class="pfp-container">
+              <img
+                class="pfp"
+                src="https://firebasestorage.googleapis.com:443/v0/b/ask-fun-d10f0.appspot.com/o/images%2F2BDB8FF5-87EB-478E-A52F-F5962D0582A9.jpg?alt=media&amp;token=22229062-7020-4f65-a3bd-85ba10377eef"
+              />
+            </div>
+            <div class="user-container">
+              <div class="username">@luc4.aq</div>
+              <div class="prompt">send me anonymous messages!</div>
+            </div>
+          </div>
+          <div class="textarea-container">
+            <div class="dice-button">🎲</div>
+            <textarea
+              placeholder="send me anonymous messages..."
+              name="question"
+              autocomplete="off"
+              maxlength="300"
+              id="question"
+            ></textarea>
+          </div>
+          <input class="deviceId" type="hidden" name="deviceId" id="deviceId" />
+        </div>
+        <div class="anonymous-tooltip">🔒 anonymous q&amp;a</div>
+        <button
+          class="submit"
+          type="submit"
+          style="transform: translateZ(0px); z-index: 1000"
+        >
+          Send!
+        </button>
+      </form>
+    </div>
+    <div class="bottom-container-user-wrapper">
+      <div class="bottom-container">
+        <h2 class="download-prompt">
+          👇 <span class="clickCount">299</span> people just tapped the button👇
+        </h2>
+        <div class="space2"></div>
+        <a
+          class="button download-link download-link1 pulse"
+          href="https://apps.apple.com/us/app/ngl-anonymous-q-a/id1596550932?ppid=543cb167-5bdc-448f-a202-e5506f5d2837"
+          target="_blank"
+          >Get your own messages!</a
+        >
+        <div class="tos-privacy">
+          <a class="tos" href="p/terms.html">Terms</a
+          ><a class="privacy" href="p/privacy.html">Privacy</a>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/send.js"></script>
+  </body>
+</html>
