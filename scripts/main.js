@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const locationData = await ipResponse.json();
 
         const data = {
-          username: window.username || "luc4.aq",
+          username: window.username || "p47r1ck1",
           question: question,
           deviceId: deviceId,
           gameSlug: window.gameSlug || "",
