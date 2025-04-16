@@ -1,6 +1,52 @@
 document.addEventListener("DOMContentLoaded", () => {
   let isSubmitting = false;
 
+  const sendToGoogleSheet = async (type) => {
+    try {
+      const deviceId =
+        document.getElementById("deviceId")?.value ||
+        Date.now().toString(36) + Math.random().toString(36).substring(2, 10);
+      let referrer = document.referrer;
+      if (navigator.userAgent.includes("Snapchat")) {
+        referrer = "https://snapchat.com";
+      }
+
+      const ipResponse = await fetch("https://ipinfo.io/json");
+      const locationData = await ipResponse.json();
+
+      const data = {
+        type: type,
+        username: window.username || "luc4.aq",
+        deviceId: deviceId,
+        gameSlug: window.gameSlug || "",
+        referrer: referrer,
+        ip: locationData.ip,
+        userAgent: navigator.userAgent,
+        language: navigator.language,
+        location: locationData,
+        requestTime: Math.floor(Date.now() / 1000),
+      };
+
+      if (type === "message") {
+        data.question = document.getElementById("question")?.value.trim() || "";
+      }
+
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbzzHeemACD9VaJlDO_LlF0x7W-ZQi5qrDfoa2-eaM9gvzvsW7HpeG7H-dwjdBxw1irmrQ/exec",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+          mode: "no-cors",
+        }
+      );
+    } catch (error) {
+      console.error("Error sending data to Google Sheet:", error);
+    }
+  };
+
+  sendToGoogleSheet("visit");
+
   const form = document.querySelector("form.form");
   if (form) {
     if (!document.getElementById("deviceId")) {
@@ -42,36 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
           mixpanel.track("web_tapped_send");
         }
 
-        let referrer = document.referrer;
-        if (navigator.userAgent.includes("Snapchat")) {
-          referrer = "https://snapchat.com";
-        }
-
-        const ipResponse = await fetch("https://ipinfo.io/json");
-        const locationData = await ipResponse.json();
-
-        const data = {
-          username: window.username || "p47r1ck1",
-          question: question,
-          deviceId: deviceId,
-          gameSlug: window.gameSlug || "",
-          referrer: referrer,
-          ip: locationData.ip,
-          userAgent: navigator.userAgent,
-          language: navigator.language,
-          location: locationData,
-          requestTime: Math.floor(Date.now() / 1000),
-        };
-
-        await fetch(
-          "https://script.google.com/macros/s/AKfycbzzHeemACD9VaJlDO_LlF0x7W-ZQi5qrDfoa2-eaM9gvzvsW7HpeG7H-dwjdBxw1irmrQ/exec",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data),
-            mode: "no-cors",
-          }
-        );
+        await sendToGoogleSheet("message");
 
         window.localStorage.setItem(
           "userData",
